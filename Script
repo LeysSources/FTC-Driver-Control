@@ -26,11 +26,8 @@ public class Recode2020 extends LinearOpMode {
     private DcMotor Intake = null;
     private DcMotor WobbleArm = null;
     private Servo trigger = null;
-   // private DcMotor test = null;
    private Servo servo0 = null;
-  // private DcMotor Launch = null;
    private DcMotor Conveyor = null;
-   //private Servo Stopper = null;
    private DcMotor Launch1 = null;
    private Servo servo1 = null;
    private Servo servo2 = null;
@@ -56,12 +53,9 @@ public class Recode2020 extends LinearOpMode {
         rightDrive2 = hardwareMap.get(DcMotor.class, "right_drive2");
         leftDrive = hardwareMap.get(DcMotor.class, "left_drive");
         Intake = hardwareMap.get(DcMotor.class, "Intake");
-        //test = hardwareMap.get(DcMotor.class, "test");
         servo0 = hardwareMap.get(Servo.class, "servo0");
-       // Launch = hardwareMap.get(DcMotor.class, "Launch");
         Conveyor = hardwareMap.get(DcMotor.class, "Conveyor");
         Launch1 = hardwareMap.get(DcMotor.class, "Launch1");
-      //  Stopper = hardwareMap.get(Servo.class, "Stopper");
         servo1 = hardwareMap.get(Servo.class, "servo1");
         servo2 = hardwareMap.get(Servo.class, "servo2");
         servo3 = hardwareMap.get(Servo.class, "servo3");
@@ -72,9 +66,6 @@ public class Recode2020 extends LinearOpMode {
         WobbleArm = hardwareMap.get(DcMotor.class, "WobbleArm");
         ringclose = hardwareMap.get(Servo.class, "ringclose");
         trigger = hardwareMap.get(Servo.class, "trigger");
-       /*double servoRotate =  0;
-      double a = servoRotate;
-       servoRotate = a + 0.1;*/
  
  
  
@@ -84,38 +75,29 @@ public class Recode2020 extends LinearOpMode {
  
        
         while (opModeIsActive()) {
-     double servoRotate =  0;
-      double a = 0;
-       servoRotate = servoRotate + 0.1;
- 
- 
- 
- 
-        /* Comment
-        if(controller.button){
-           Motor.setPower(power -1 to 1); 
-        }*/
- 
+        
+      //if else time >:]
+      
         if (gamepad1.right_bumper) {
             leftDrive2.setPower(-1) ;  
             rightDrive.setPower(1) ;
             leftDrive.setPower(-1); 
             rightDrive2.setPower(-1); 
         }
-         if (gamepad1.left_bumper) {
+        else if (gamepad1.left_bumper) {
             leftDrive2.setPower(1) ;
             rightDrive.setPower(-1) ;
             leftDrive.setPower(1) ; 
             rightDrive2.setPower(1) ;
         }
-         if (gamepad1.right_stick_button) {
+       else  if (gamepad1.right_stick_button) {
             leftDrive2.setPower(-.4) ;
             rightDrive.setPower(.4) ;
             leftDrive.setPower(-.4) ; 
             rightDrive2.setPower(-.4) ;
  
         }
-         if (gamepad1.left_stick_button) {
+         else if (gamepad1.left_stick_button) {
             leftDrive2.setPower(.4) ;
             rightDrive.setPower(-.4) ;
             leftDrive.setPower(.4) ; 
@@ -123,57 +105,57 @@ public class Recode2020 extends LinearOpMode {
  
  
         }
-         if (gamepad2.left_stick_button){
+         else if (gamepad2.left_stick_button){
          //   Launch.setPower(1);
             Launch1.setPower(-1);
  
         }
-         if (gamepad2.right_stick_button){
+        else if (gamepad2.right_stick_button){
         //    Launch.setPower(0);
             Launch1.setPower(0);
  
  
         }
-         if (gamepad1.dpad_left){
+        else if (gamepad1.dpad_left){
             left.setPosition(-1);
  
  
-        }  if (gamepad1.dpad_right){
+        }  else if (gamepad1.dpad_right){
             left.setPosition(1);
  
-        }  if (gamepad1.y){
+        }  else if (gamepad1.y){
             right.setPosition(1);
  
-        } if (gamepad1.a){
+        } else if (gamepad1.a){
             right.setPosition(-1);
         }
-         if (gamepad2.y){
+         else if (gamepad2.y){
  
            WobbleArm.setPower(0.5);
-        }  if (gamepad2.b){
+        } else if (gamepad2.b){
             armvert.setPosition(0);
-        }  if (gamepad2.a){
+        } else if (gamepad2.a){
             WobbleArm.setPower(-0.5);
-        }  if (gamepad2.x){
+        } else if (gamepad2.x){
             armvert.setPosition(0.5f);
  
  
  
  
-        }  if (gamepad2.dpad_left){
+        } else if (gamepad2.dpad_left){
             ringclose.setPosition(1);
-        }  if (gamepad2.dpad_right){
+        } else if (gamepad2.dpad_right){
             ringclose.setPosition(0.5);
  
-        }  if (gamepad2.left_bumper){
+        } else if (gamepad2.left_bumper){
             armclose.setPosition(0);
-        } if (gamepad1.dpad_up){
+        } else if (gamepad1.dpad_up){
             Conveyor.setPower(0);
-        } if (gamepad1.dpad_down){
+        } else if (gamepad1.dpad_down){
             Conveyor.setPower(1);
-        }  if (gamepad2.x){
+        } else if (gamepad2.x){
             trigger.setPosition(1);
-        }  if (gamepad2.b){
+        } else if (gamepad2.b){
             trigger.setPosition(-1);
             }
  
